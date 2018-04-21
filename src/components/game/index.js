@@ -14,7 +14,7 @@ class Game extends Component {
   position = 180;
   rotation = 0;
   flyArea = 0;
-  pipes = new Array();
+  pipes = [];
   //loops
   loopGameloop = null;
   loopPipeloop = null;
@@ -39,7 +39,7 @@ class Game extends Component {
          $("#splash").transition({ opacity: 1 }, 1000, 'ease');
         $(document).on("mousedown", this.screenClick);
         $(document).keydown((e) => {
-           if(e.keyCode == 32) {
+           if(e.keyCode === 32) {
              this.screenClick();
            }
         });
@@ -163,10 +163,10 @@ class Game extends Component {
         gameState
       } = this.props;
 
-     if(gameState == GameStates.PLAYING) {
+     if(gameState === GameStates.PLAYING) {
         this.playerJump();
      }
-     else if(gameState == GameStates.SPLASH_SCREEN) {
+     else if(gameState === GameStates.SPLASH_SCREEN) {
         this.startGame();
      }
   }
@@ -188,7 +188,7 @@ class Game extends Component {
 
      //clear out all the pipes if there are any
      $(".pipe").remove();
-     this.pipes = new Array();
+     this.pipes = [];
 
      //make everything animated again
      $(".animated").css('animation-play-state', 'running');
@@ -261,7 +261,6 @@ class Game extends Component {
                  <div id="flyarea">
                     <div id="ceiling" className="animated"></div>
                     <div id="player" className="bird animated"></div>
-
                     <div id="splash"></div>
                  </div>
               </div>
@@ -282,16 +281,8 @@ function mapStateToProps(state, ownProps) {
     totalScoresCount: state.stats.scores.length
   };
 }
-function mapDispatchToProps (dispatch) {
-  return {
-    // dispatchStartGame: (twitterUsername, profile) => dispatch(startGame(twitterUsername, profile)),
-    // dispatchEndGame: (twitterUsername, finalScore) => dispatch(endGame(twitterUsername, finalScore)),
-    // dispatchUpdateScore: (twitterUsername, score) => dispatch(updateScore(twitterUsername, score))
-  }
-}
 
 export default connect (
   mapStateToProps,
-  mapDispatchToProps
+  // mapDispatchToProps
 )(Game);
-// export default Game;

@@ -119,7 +119,7 @@ class Wrapper extends Component {
         <header style={styles.header}>
           {/*<img style={styles.agLogo} src="ag_logo.png"/>*/}
           <h1 style={{color:'black'}}>#FlappyAddison</h1>
-          {status == GameStates.PLAYING && <h4 style={{color:'black'}}>Score: {score}</h4>}
+          {status === GameStates.PLAYING && <h4 style={{color:'black'}}>Score: {score}</h4>}
         </header>
 
         <Game
