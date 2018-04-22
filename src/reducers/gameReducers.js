@@ -12,8 +12,6 @@ export default function gameReducers(state = initialState.currentGame, action) {
           ...state,
           status: 1,
           playing: true,
-          twitterUsername: action.twitterUsername,
-          profile: action.profile || 'DEFAULT',
           score: 0
         }
 
@@ -27,7 +25,9 @@ export default function gameReducers(state = initialState.currentGame, action) {
       case Action.UPDATE_GAME_STATUS:
         return {
           ...state,
-          status: action.status
+          status: action.status,
+          twitterUsername: action.twitterUsername,
+          profile: action.profile || 'DEFAULT',
         };
 
       case Action.END_CURRENT_GAME:

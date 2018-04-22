@@ -8,6 +8,14 @@ const JUMP = -4.6;
 const DEFAULT_PIPE_HEIGHT = 140;
 const PIPE_WIDTH = 52;
 
+const styles = {
+  gameWrapper: {
+    maxHeight: '455px',
+    paddingTop: '16px',
+    position: 'relative',
+    overflow: 'hidden'
+  }
+}
 class Game extends Component {
 
   velocity = 0;
@@ -250,10 +258,7 @@ class Game extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.currentGame.twitterUsername && this.props.currentGame.playing &&
-          <h3 style={{ color: 'black'}}>Now playing: {this.props.currentGame.twitterUsername}</h3>
-        }
+      <div style={styles.gameWrapper}>
 
          <div id="gamecontainer">
              <div id="gamescreen">

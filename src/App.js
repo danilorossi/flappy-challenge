@@ -5,7 +5,7 @@ import configureStore from './store/configureStore';
 
 import initialState from './reducers/initialState';
 
-import Wrapper from './components/Wrapper';
+import PageWrapper from './components/PageWrapper';
 
 import './App.css';
 
@@ -21,7 +21,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <Wrapper />
+        <PageWrapper />
       </Provider>
     );
   }

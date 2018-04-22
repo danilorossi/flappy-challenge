@@ -8,11 +8,9 @@ import { onGameFinished } from './statsActions';
 /**
 * @description Notify Redux that a new game has started
 */
-export function startGame(twitterUsername, profile) {
+export function startGame() {
   return {
-    type: Action.START_GAME,
-    twitterUsername,
-    profile
+    type: Action.START_GAME
   };
 }
 
@@ -31,10 +29,12 @@ export function setMainScreenStatus() {
   };
 }
 
-export function setSplashScreenStatus() {
+export function setSplashScreenStatus(twitterUsername, profile) {
   return {
     type: Action.UPDATE_GAME_STATUS,
-    status: GameStates.SPLASH_SCREEN
+    status: GameStates.SPLASH_SCREEN,
+    twitterUsername,
+    profile
   };
 }
 
