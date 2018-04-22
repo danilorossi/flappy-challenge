@@ -10,3 +10,5 @@ This is a work in progress, so:
 - etc.
 
 This README is a work in progress too: I will update it to reflect the project status.
+
+[DEMO](https://danilorossi.github.io/flappy-challenge/)
