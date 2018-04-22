@@ -11,7 +11,7 @@ import './App.css';
 
 
 // Init redux store with initial state
-const store = configureStore(initialState);
+const { store } = configureStore(initialState);
 
 
 
